@@ -26,13 +26,6 @@ int main()
     cout << "ISI DATA LIST JALAN:" << endl;
     printInfoJalan(Lj);
 
-    cout << "Anda ingin menghapus data jalan?";
-    cin >> targetjalan;
-
-    removeJalan(Lj,targetjalan);
-
-    cout << "ISI DATA LIST SETELAH DILAKUKAN REMOVE JALAN:" << endl;
-    printInfoJalan(Lj);
 
     createListKota(Lk);
 
@@ -50,13 +43,6 @@ int main()
     cout << "ISI DATA LIST KOTA:" << endl;
     printInfoKota(Lk);
 
-    cout << "Anda ingin menghapus data kota?";
-    cin >> targetkota;
-
-    removeKota(Lk,targetkota);
-
-    cout << "ISI DATA LIST SETELAH DILAKUKAN REMOVE KOTA:" << endl;
-    printInfoKota(Lk);
 
     return 0;
 }
