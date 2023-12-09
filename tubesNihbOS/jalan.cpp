@@ -14,9 +14,8 @@ void createListJalan(JalanList &Lj){
 bool isEmptyJalan(JalanList Lj){
     return Lj.first == NULL && Lj.last == NULL;
 }
-addressJalan findElementJalan(infotypeJalan x){
+addressJalan findElementJalan(JalanList Lj,infotypeJalan x){
     addressJalan p;
-    JalanList Lj;
     p = Lj.first;
     while(p != NULL && p->infojalan != x){
         p = p->next;
@@ -83,7 +82,7 @@ void removeJalan(JalanList &Lj,infotypeJalan x){
         deleteLastJalan(Lj,p);
     }else{
         q = Lj.first;
-        acuan = findElementJalan(x);
+        acuan = findElementJalan(Lj,x);
         while(q != NULL){
             if(q->next == acuan){
                 prec = q;

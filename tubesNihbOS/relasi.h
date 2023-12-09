@@ -8,25 +8,27 @@
 using namespace std;
 
 typedef struct elmRelasi * addressRelasi;
-typedef string infotypeRelasi;
 
 struct elmRelasi{
-    infotypeRelasi inforelasi;
     addressRelasi next;
-    addressRelasi up;
-    addressRelasi down;
+    addressKota up;
+    addressJalan down;
 };
 
 struct RelasiList{
     addressRelasi first;
-    addressRelasi last;
 };
 
 void createListRelasi(RelasiList &Rl);
 bool isEmptyRelasi(RelasiList Rl);
-addressRelasi newElementRelasi(infotypeKota kota,infotypeJalan jalan);
+addressRelasi newElementRelasi();
+void deleteCityandRelation(RelasiList &Rl,KotaList &Lk,string kota);
+void deleteLastRelation(RelasiList &Rl,addressRelasi &p);
+void deleteFirstRelation(RelasiList &Rl,addressRelasi &p);
 void insertLastRelasi(RelasiList &Rl,addressRelasi p);
-void showInfoRelasi(RelasiList Rl,KotaList Lk,JalanList Lj);
+void newRelation(RelasiList &Rl,KotaList Lk,JalanList Lj,string kota,string jalan);
+void searchStreetByCity(RelasiList Rl,KotaList Lk,string jalan);
+void showInfoRelasi(RelasiList Rl);
 
 
 

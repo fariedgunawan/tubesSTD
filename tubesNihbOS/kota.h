@@ -14,13 +14,12 @@ struct elmKota{
 
 struct KotaList{
     addressKota first;
-    addressKota last;
 };
 
 void createListKota(KotaList &Lk);
 bool isEmptyKota(KotaList Lk);
 addressKota newElementKota(infotypeKota x);
-addressKota findElementKota(infotypeKota x);
+addressKota findElementKota(KotaList Lk,infotypeKota x);
 void insertLastKota(KotaList &Lk,addressKota p);
 void deleteFirstKota(KotaList &Lk,addressKota &p);
 void deleteLastKota(KotaList &Lk,addressKota &p);
