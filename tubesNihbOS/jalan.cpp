@@ -14,14 +14,22 @@ void createListJalan(JalanList &Lj){
 bool isEmptyJalan(JalanList Lj){
     return Lj.first == NULL && Lj.last == NULL;
 }
-addressJalan findElementJalan(JalanList Lj,infotypeJalan x){
+
+addressJalan findElementJalan(JalanList Lj, infotypeJalan x) {
     addressJalan p;
     p = Lj.first;
-    while(p != NULL && p->infojalan != x){
+
+    if (isEmptyJalan(Lj)) {
+        return NULL;
+    }
+
+    while (p != NULL && p->infojalan != x) {
         p = p->next;
     }
+
     return p;
 }
+
 void insertLastJalan(JalanList &Lj,addressJalan p){
     addressJalan last;
     if(isEmptyJalan(Lj)){

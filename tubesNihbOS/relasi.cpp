@@ -52,16 +52,18 @@ void searchStreetByCity(RelasiList Rl, KotaList Lk, string kota) {
     if (isEmptyRelasi(Rl)) {
         cout << "Tidak ada relasi kemana pun";
     } else {
+        addressKota adrkot = findElementKota(Lk, kota);
         p = Rl.first;
+
         while (p != NULL) {
-            addressKota adrkot = findElementKota(Lk, kota);
-            if (adrkot != NULL && p->up == adrkot) {
+            if (p->up == adrkot) {
                 cout << p->down->infojalan << endl;
             }
             p = p->next;
         }
     }
 }
+
 
 void deleteFirstRelation(RelasiList &Rl,addressRelasi &p){
     if(isEmptyRelasi(Rl)){
@@ -93,23 +95,48 @@ void deleteLastRelation(RelasiList &Rl,addressRelasi &p){
     }
 }
 
-void deleteCityandRelation(RelasiList &Rl,KotaList &Lk,string kota){
-    addressRelasi p;
-    if(isEmptyRelasi(Rl)){
-        cout << "Relasi Tidak ada";
+void deleteAfterRelation(addressRelasi prec,addressRelasi &p){
+    if(prec == NULL){
+        cout << "prec null";
     }else{
-        p = Rl.first;
-        while(p != NULL){
-            addressKota adrkot = findElementKota(Lk,kota);
-            if(adrkot == Rl.first->up){
-                deleteFirstRelation(Rl,p);
-            }else if(Rl.first->up != adrkot && p->next == NULL && p->up == adrkot){
-                deleteLastRelation(Rl,p);
-            }
-        }
-        removeKota(Lk,kota);
+        p = prec->next;
+        prec->next = p->next;
+        p->next = NULL;
     }
 }
+
+void deleteCityandRelation(RelasiList &Rl, KotaList &Lk, string kota) {
+    addressRelasi p, prec;
+    addressKota adrkot;
+
+    if (isEmptyRelasi(Rl)) {
+        cout << "Relasi tidak ada";
+    } else {
+        adrkot = findElementKota(Lk, kota);
+        p = Rl.first;
+
+        if (Rl.first->up == adrkot) {
+            deleteFirstRelation(Rl, p);
+        } else {
+            while (p->next != NULL) {
+                if (p->next->up == adrkot) {
+                    prec = p;
+                    deleteAfterRelation(prec, p);
+                }
+                p = p->next;
+            }
+
+            if (Rl.first->up == adrkot) {
+                deleteFirstRelation(Rl, p);
+            } else if (p->up == adrkot) {
+                deleteLastRelation(Rl, p);
+            }
+        }
+
+        removeKota(Lk, kota);
+    }
+}
+
 void showInfoRelasi(RelasiList Rl){
     addressRelasi p;
     if(isEmptyRelasi(Rl)){

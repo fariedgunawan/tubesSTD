@@ -12,14 +12,23 @@ addressKota newElementKota(infotypeKota x){
     p->infokota = x;
     return p;
 }
-addressKota findElementKota(KotaList Lk,infotypeKota x){
+
+addressKota findElementKota(KotaList Lk, infotypeKota x) {
     addressKota p;
     p = Lk.first;
-    while(p->next != Lk.first && p->infokota != x){
-        p = p->next;
+
+    if (p != NULL) {
+        do {
+            if (p->infokota == x) {
+                return p;
+            }
+            p = p->next;
+        } while (p != Lk.first);
     }
-    return p;
+
+    return NULL;
 }
+
 void insertLastKota(KotaList &Lk,addressKota p){
     addressKota last;
     if(isEmptyKota(Lk)){
