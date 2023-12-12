@@ -32,7 +32,13 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="jalan.cpp" />
+		<Unit filename="jalan.h" />
+		<Unit filename="kota.cpp" />
+		<Unit filename="kota.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="relasi.cpp" />
+		<Unit filename="relasi.h" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

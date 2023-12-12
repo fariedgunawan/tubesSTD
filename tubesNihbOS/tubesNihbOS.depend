@@ -1,17 +1,26 @@
 # depslib dependency file v1.0
-1701275294 source:d:\github\tubesstd\tubesnihbos\main.cpp
+1702218000 source:d:\github\tubesstd\tubesnihbos\main.cpp
 	"jalan.h"
 	"kota.h"
+	"relasi.h"
 
-1701271391 d:\github\tubesstd\tubesnihbos\jalan.h
+1702139043 d:\github\tubesstd\tubesnihbos\jalan.h
 	<iostream>
 
-1701271391 source:d:\github\tubesstd\tubesnihbos\jalan.cpp
+1702210440 source:d:\github\tubesstd\tubesnihbos\jalan.cpp
 	"jalan.h"
 
-1701275294 d:\github\tubesstd\tubesnihbos\kota.h
+1702139043 d:\github\tubesstd\tubesnihbos\kota.h
 	<iostream>
 
-1701275334 source:d:\github\tubesstd\tubesnihbos\kota.cpp
+1702210440 source:d:\github\tubesstd\tubesnihbos\kota.cpp
 	"kota.h"
+
+1702217949 source:d:\github\tubesstd\tubesnihbos\relasi.cpp
+	"relasi.h"
+
+1702217965 d:\github\tubesstd\tubesnihbos\relasi.h
+	"kota.h"
+	"jalan.h"
+	<iostream>
 

@@ -21,7 +21,7 @@ struct JalanList{
 addressJalan newElementJalan(infotypeJalan x);
 void createListJalan(JalanList &Lj);
 bool isEmptyJalan(JalanList Lj);
-addressJalan findElementJalan(infotypeJalan x);
+addressJalan findElementJalan(JalanList Lj,infotypeJalan x);
 void insertLastJalan(JalanList &Lj,addressJalan p);
 void deleteFirstJalan(JalanList &Lj,addressJalan &p);
 void deleteLastJalan(JalanList &Lj,addressJalan &p);
