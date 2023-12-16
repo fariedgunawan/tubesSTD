@@ -137,6 +137,59 @@ void deleteCityandRelation(RelasiList &Rl, KotaList &Lk, string kota) {
     }
 }
 
+void deleteStreetbyCity(RelasiList &Rl, KotaList &Lk, JalanList &Lj, string kota) {
+    addressRelasi p, q, prec;
+    string targetjalan;
+
+    searchStreetByCity(Rl, Lk, kota);
+    cout << "Anda Akan Menghapus jalan apa?";
+    cin >> targetjalan;
+
+    p = Rl.first;
+
+    if (Rl.first != NULL && Rl.first->down->infojalan == targetjalan && Rl.first->up->infokota == kota) {
+        deleteFirstRelation(Rl, q);
+    } else {
+        p = Rl.first;
+        while (p != NULL && !(p->down->infojalan == targetjalan && p->up->infokota == kota)) {
+            prec = p;
+            p = p->next;
+        }
+
+        if (p != NULL) {
+            if (p->next == NULL) {
+                deleteLastRelation(Rl, q);
+            } else {
+                deleteAfterRelation(prec, q);
+            }
+        } else {
+            cout << "Jalan tidak ditemukan." << endl;
+        }
+    }
+
+    showInfoRelasi(Rl);
+}
+
+void countCityByStreet(RelasiList Rl,string jalan){
+    addressRelasi p;
+    int i = 0;
+    if(Rl.first == NULL){
+        cout << "Relasi tidak ada";
+    }else{
+        p = Rl.first;
+        while(p != NULL){
+            if(p->down->infojalan == jalan){
+                cout << p->up->infokota << endl;
+                i++;
+            }
+            p = p->next;
+        }
+    }
+    cout << "Terdapat " << i << " Kota" << " Yang Memiliki Jalan " << jalan;
+    cout << endl;
+}
+
+
 void showInfoRelasi(RelasiList Rl){
     addressRelasi p;
     if(isEmptyRelasi(Rl)){

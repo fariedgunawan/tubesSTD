@@ -27,6 +27,8 @@ void deleteLastRelation(RelasiList &Rl,addressRelasi &p);
 void deleteFirstRelation(RelasiList &Rl,addressRelasi &p);
 void deleteAfterRelation(addressRelasi prec,addressRelasi &p);
 void insertLastRelasi(RelasiList &Rl,addressRelasi p);
+void countCityByStreet(RelasiList Rl,string jalan);
+void deleteStreetbyCity(RelasiList &Rl,KotaList &Lk,JalanList &Lj,string kota);
 void newRelation(RelasiList &Rl,KotaList Lk,JalanList Lj,string kota,string jalan);
 void searchStreetByCity(RelasiList Rl,KotaList Lk,string jalan);
 void showInfoRelasi(RelasiList Rl);
