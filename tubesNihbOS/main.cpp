@@ -20,7 +20,8 @@ int main()
     cout << "5.SHOW RELASI" << endl;
     cout << "6.SHOW KOTA" << endl;
     cout << "7.SHOW JALAN" << endl;
-    cout << "8.DELETE CITY AND RELATION" << endl;
+    cout << "8.HITUNG KOTA BERDASARKAN JALAN" << endl;
+    cout << "9.HAPUS JALAN DARI KOTA TERTENTU" << endl;
     cout << "0.EXIT" << endl;
     int opsi;
     cout << "Masukan Opsi: ";
@@ -50,7 +51,8 @@ int main()
             cout << "5.SHOW RELASI" << endl;
             cout << "6.SHOW KOTA" << endl;
             cout << "7.SHOW JALAN" << endl;
-            cout << "8.DELETE CITY AND RELATION" << endl;
+            cout << "8.HITUNG KOTA BERDASARKAN JALAN" << endl;
+            cout << "9.HAPUS JALAN DARI KOTA TERTENTU" << endl;
             cout << "0.EXIT" << endl;
             cout << "Masukan Opsi: ";
             cin >> opsi;
@@ -75,7 +77,8 @@ int main()
             cout << "5.SHOW RELASI" << endl;
             cout << "6.SHOW KOTA" << endl;
             cout << "7.SHOW JALAN" << endl;
-            cout << "8.DELETE CITY AND RELATION" << endl;
+            cout << "8.HITUNG KOTA BERDASARKAN JALAN" << endl;
+            cout << "9.HAPUS JALAN DARI KOTA TERTENTU" << endl;
             cout << "0.EXIT" << endl;
             cout << "Masukan Opsi: ";
             cin >> opsi;
@@ -107,7 +110,8 @@ int main()
             cout << "5.SHOW RELASI" << endl;
             cout << "6.SHOW KOTA" << endl;
             cout << "7.SHOW JALAN" << endl;
-            cout << "8.DELETE CITY AND RELATION" << endl;
+            cout << "8.HITUNG KOTA BERDASARKAN JALAN" << endl;
+            cout << "9.HAPUS JALAN DARI KOTA TERTENTU" << endl;
             cout << "0.EXIT" << endl;
             cout << "Masukan Opsi: ";
             cin >> opsi;
@@ -129,7 +133,8 @@ int main()
             cout << "5.SHOW RELASI" << endl;
             cout << "6.SHOW KOTA" << endl;
             cout << "7.SHOW JALAN" << endl;
-            cout << "8.DELETE CITY AND RELATION" << endl;
+            cout << "8.HITUNG KOTA BERDASARKAN JALAN" << endl;
+            cout << "9.HAPUS JALAN DARI KOTA TERTENTU" << endl;
             cout << "0.EXIT" << endl;
             cout << "Masukan Opsi: ";
             cin >> opsi;
@@ -144,7 +149,8 @@ int main()
             cout << "5.SHOW RELASI" << endl;
             cout << "6.SHOW KOTA" << endl;
             cout << "7.SHOW JALAN" << endl;
-            cout << "8.DELETE CITY AND RELATION" << endl;
+            cout << "8.HITUNG KOTA BERDASARKAN JALAN" << endl;
+            cout << "9.HAPUS JALAN DARI KOTA TERTENTU" << endl;
             cout << "0.EXIT" << endl;
             cout << "Masukan Opsi: ";
             cin >> opsi;
@@ -159,7 +165,8 @@ int main()
             cout << "5.SHOW RELASI" << endl;
             cout << "6.SHOW KOTA" << endl;
             cout << "7.SHOW JALAN" << endl;
-            cout << "8.DELETE CITY AND RELATION" << endl;
+            cout << "8.HITUNG KOTA BERDASARKAN JALAN" << endl;
+            cout << "9.HAPUS JALAN DARI KOTA TERTENTU" << endl;
             cout << "0.EXIT" << endl;
             cout << "Masukan Opsi: ";
             cin >> opsi;
@@ -174,14 +181,15 @@ int main()
             cout << "5.SHOW RELASI" << endl;
             cout << "6.SHOW KOTA" << endl;
             cout << "7.SHOW JALAN" << endl;
-            cout << "8.DELETE CITY AND RELATION" << endl;
+            cout << "8.HITUNG KOTA BERDASARKAN JALAN" << endl;
+            cout << "9.HAPUS JALAN DARI KOTA TERTENTU" << endl;
             cout << "0.EXIT" << endl;
             cout << "Masukan Opsi: ";
             cin >> opsi;
-        }else{
-            cout << "Anda akan menghapus data kota: ";
-            cin >> targetkota;
-            deleteCityandRelation(Rl,Lk,targetkota);
+        }else if(opsi == 8){
+            cout << "Hitung kota yang memiliki jalan: ";
+            cin >> targetjalan;
+            countCityByStreet(Rl,targetjalan);
             cout << "Pilih Opsi dibawah ini:" << endl;
             cout << "1.INPUT KOTA" << endl;
             cout << "2.INPUT JALAN" << endl;
@@ -190,7 +198,25 @@ int main()
             cout << "5.SHOW RELASI" << endl;
             cout << "6.SHOW KOTA" << endl;
             cout << "7.SHOW JALAN" << endl;
-            cout << "8.DELETE CITY AND RELATION" << endl;
+            cout << "8.HITUNG KOTA BERDASARKAN JALAN" << endl;
+            cout << "9.HAPUS JALAN DARI KOTA TERTENTU" << endl;
+            cout << "0.EXIT" << endl;
+            cout << "Masukan Opsi: ";
+            cin >> opsi;
+        }else{
+            cout << "Hapus jalan tertentu dari kota: ";
+            cin >> targetkota;
+            deleteStreetbyCity(Rl,Lk,Lj,targetkota);
+            cout << "Pilih Opsi dibawah ini:" << endl;
+            cout << "1.INPUT KOTA" << endl;
+            cout << "2.INPUT JALAN" << endl;
+            cout << "3.RELASIKAN KOTA DAN JALAN" << endl;
+            cout << "4.SEARCH JALAN BERDASARKAN KOTA" << endl;
+            cout << "5.SHOW RELASI" << endl;
+            cout << "6.SHOW KOTA" << endl;
+            cout << "7.SHOW JALAN" << endl;
+            cout << "8.HITUNG KOTA BERDASARKAN JALAN" << endl;
+            cout << "9.HAPUS JALAN DARI KOTA TERTENTU" << endl;
             cout << "0.EXIT" << endl;
             cout << "Masukan Opsi: ";
             cin >> opsi;
