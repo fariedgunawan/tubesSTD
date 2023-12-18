@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1702721670 source:d:\github\tubesstd\tubesnihbos\main.cpp
+1702874277 source:d:\github\tubesstd\tubesnihbos\main.cpp
 	"jalan.h"
 	"kota.h"
 	"relasi.h"
@@ -16,7 +16,7 @@
 1702210440 source:d:\github\tubesstd\tubesnihbos\kota.cpp
 	"kota.h"
 
-1702721774 source:d:\github\tubesstd\tubesnihbos\relasi.cpp
+1702874850 source:d:\github\tubesstd\tubesnihbos\relasi.cpp
 	"relasi.h"
 
 1702721660 d:\github\tubesstd\tubesnihbos\relasi.h
