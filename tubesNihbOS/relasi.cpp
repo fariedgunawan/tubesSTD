@@ -106,36 +106,44 @@ void deleteAfterRelation(addressRelasi prec,addressRelasi &p){
 }
 
 void deleteCityandRelation(RelasiList &Rl, KotaList &Lk, string kota) {
-    addressRelasi p, prec;
     addressKota adrkot;
+    addressRelasi p, q, prec;
+    int i = 0;
+    int s = 0;
 
-    if (isEmptyRelasi(Rl)) {
-        cout << "Relasi tidak ada";
+    if (Rl.first == NULL) {
+        cout << "Relasi Kosong";
     } else {
         adrkot = findElementKota(Lk, kota);
         p = Rl.first;
 
-        if (Rl.first->up == adrkot) {
-            deleteFirstRelation(Rl, p);
-        } else {
-            while (p->next != NULL) {
-                if (p->next->up == adrkot) {
+        while (p != NULL) {
+            if (p->up == adrkot) {
+                i++;
+            }
+            p = p->next;
+        }
+
+        while (s != i) {
+            p = Rl.first;
+            while (p != NULL) {
+                if (Rl.first->up == adrkot) {
+                    deleteFirstRelation(Rl, q);
+                } else if (p->next == NULL && p->up == adrkot) {
+                    deleteLastRelation(Rl, q);
+                } else if (p->next != NULL && p->next->up == adrkot) {
                     prec = p;
-                    deleteAfterRelation(prec, p);
+                    deleteAfterRelation(prec, q);
                 }
                 p = p->next;
             }
-
-            if (Rl.first->up == adrkot) {
-                deleteFirstRelation(Rl, p);
-            } else if (p->up == adrkot) {
-                deleteLastRelation(Rl, p);
-            }
+            s++;
         }
-
         removeKota(Lk, kota);
+        showInfoRelasi(Rl);
     }
 }
+
 
 void deleteStreetbyCity(RelasiList &Rl, KotaList &Lk, JalanList &Lj, string kota) {
     addressRelasi p, q, prec;
